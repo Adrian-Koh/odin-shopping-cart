@@ -5,6 +5,7 @@ import { shopItems } from "./shop-items";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const [displayProducts, setDisplayProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -14,11 +15,21 @@ const Shop = () => {
       setProducts(result);
 
       const categorySet = new Set(result.map((product) => product.category));
-      setCategories([...categorySet]);
+      setCategories(["all products", ...categorySet]);
     };
 
     fetchProducts();
   }, []);
+
+  function handleCategoryClick(category) {
+    if (category === "all products") {
+      setDisplayProducts(products);
+    } else {
+      setDisplayProducts(
+        products.filter((product) => product.category === category),
+      );
+    }
+  }
 
   return (
     <>
@@ -28,18 +39,23 @@ const Shop = () => {
           <h2>Categories</h2>
           <ul>
             {categories.map((category) => {
-              return <li>{category}</li>;
+              return (
+                <li
+                  key={category}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  {category}
+                </li>
+              );
             })}
           </ul>
         </aside>
         <main>
-          {products.map((product) => {
+          {displayProducts.map((product) => {
             return (
-              <div className="card">
+              <div className="card" key={product.id}>
                 <img src={product.image} alt={product.title} />
-                <h2>{product.title}</h2>
-                <p>Category: {product.category}</p>
-                <p>Description: {product.description}</p>
+                <p className="card-title">{product.title}</p>
               </div>
             );
           })}

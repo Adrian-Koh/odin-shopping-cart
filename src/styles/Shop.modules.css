@@ -5,8 +5,9 @@ img {
 
 main {
     display: grid;
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(4, 250px);
     justify-content: center;
+    gap: 20px;
 }
 
 .card {
@@ -36,4 +37,10 @@ ul {
 
 aside {
     margin: 20px;
+}
+
+.card-title {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
 }
