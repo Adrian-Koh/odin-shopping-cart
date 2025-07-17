@@ -12,6 +12,7 @@ input[type=number] {
 .buttons-row {
     display: flex;
     gap: 5px;
+    justify-self: flex-end;
 }
 
 input {
