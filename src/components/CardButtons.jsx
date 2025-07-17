@@ -1,7 +1,7 @@
 import "../styles/CardButtons.modules.css";
 import { useState } from "react";
 
-const CardButtons = () => {
+const CardButtons = ({ addCartItem, id }) => {
   const [quantity, setQuantity] = useState(0);
 
   function handlePlusMinusClick(addValue) {
@@ -10,6 +10,11 @@ const CardButtons = () => {
 
   function handleQuantityInputChange(e) {
     setQuantity(parseInt(e.target.value));
+  }
+
+  function handleAddToCart() {
+    setQuantity(0);
+    addCartItem({ id, quantity });
   }
 
   return (
@@ -26,7 +31,7 @@ const CardButtons = () => {
         value={quantity}
       ></input>
       <button onClick={() => handlePlusMinusClick(1)}>+</button>
-      <button>Add to cart</button>
+      <button onClick={handleAddToCart}>Add to cart</button>
     </div>
   );
 };

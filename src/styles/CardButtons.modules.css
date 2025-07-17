@@ -16,6 +16,11 @@ input[type=number] {
 
 input {
     width: 20px;
+    text-align: center;
+}
+
+button:disabled {
+    border: solid 1px rgb(202, 202, 202);
 }
 
 button {

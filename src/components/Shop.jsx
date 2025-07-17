@@ -8,6 +8,7 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [displayProducts, setDisplayProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,6 +32,22 @@ const Shop = () => {
         products.filter((product) => product.category === category),
       );
     }
+  }
+
+  function addCartItem(item) {
+    let newCartItems;
+    if (cartItems.filter((cartItem) => cartItem.id === item.id).length > 0) {
+      newCartItems = cartItems.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          return { ...cartItem, quantity: cartItem.quantity + item.quantity };
+        }
+        return cartItem;
+      });
+    } else {
+      newCartItems = [...cartItems, item];
+    }
+
+    setCartItems(newCartItems);
   }
 
   return (
@@ -59,7 +76,7 @@ const Shop = () => {
                 <img src={product.image} alt={product.title} />
                 <p className="card-title">{product.title}</p>
                 <p className="price">${product.price}</p>
-                <CardButtons />
+                <CardButtons addCartItem={addCartItem} id={product.id} />
               </div>
             );
           })}
