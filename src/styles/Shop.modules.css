@@ -1,0 +1,39 @@
+img {
+    height: 100px;
+    width: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+ul {
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    margin: 20px;
+}
