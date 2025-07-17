@@ -14,6 +14,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 3px rgb(107, 107, 107);
+    padding: 5px;
 }
 
 h1 {
@@ -43,4 +47,9 @@ aside {
     font-weight: 500;
     font-size: 20px;
     text-align: center;
+    margin: 5px;
+}
+
+.price {
+    margin: 5px;
 }

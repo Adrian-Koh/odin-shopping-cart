@@ -1,0 +1,25 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.buttons-row {
+    display: flex;
+    gap: 5px;
+}
+
+input {
+    width: 20px;
+}
+
+button {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 3px;
+}
