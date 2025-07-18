@@ -2,13 +2,14 @@
     --link: rgb(60, 60, 194);
 }
 
-nav {
-    width: 90vw;
+.navBar {
+    --spacing: 15px;
+    width: calc(100% - (4 * var(--spacing)));
     border: none;
     border-radius: 5px;
     box-shadow: 2px 2px 5px 3px grey;
-    padding: 15px;
-    margin: 15px;
+    padding: var(--spacing);
+    margin: var(--spacing);
 }
 
 a {

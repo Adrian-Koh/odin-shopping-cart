@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "../styles/App.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
     <>
-      <nav>
+      <nav className={styles.navBar}>
         <Link to="home">Home</Link>
         <Link to="shop">Shop</Link>
       </nav>
