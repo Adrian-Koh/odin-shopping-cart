@@ -4,9 +4,11 @@ import styles from "./Shop.module.css";
 import { shopItems } from "../shop-items";
 import { CardButtons } from "../CardButtons/CardButtons";
 
+const ALL_CATEGORY = "all products";
+
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [displayProducts, setDisplayProducts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(ALL_CATEGORY);
   const [categories, setCategories] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [showShop, setShowShop] = useState(true);
@@ -19,21 +21,11 @@ const Shop = () => {
       setProducts(result);
 
       const categorySet = new Set(result.map((product) => product.category));
-      setCategories(["all products", ...categorySet]);
+      setCategories([ALL_CATEGORY, ...categorySet]);
     };
 
     fetchProducts();
   }, []);
-
-  function handleCategoryClick(category) {
-    if (category === "all products") {
-      setDisplayProducts(products);
-    } else {
-      setDisplayProducts(
-        products.filter((product) => product.category === category),
-      );
-    }
-  }
 
   function addCartItem(item) {
     let newCartItems;
@@ -80,10 +72,7 @@ const Shop = () => {
           <ul>
             {categories.map((category) => {
               return (
-                <li
-                  key={category}
-                  onClick={() => handleCategoryClick(category)}
-                >
+                <li key={category} onClick={() => setActiveCategory(category)}>
                   {category}
                 </li>
               );
@@ -92,20 +81,28 @@ const Shop = () => {
         </aside>
         <div className={styles.mainContainer}>
           <main>
-            {displayProducts.map((product) => {
-              return (
-                <div className={styles.card} key={product.id}>
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className={styles.cardImage}
-                  />
-                  <p className={styles.cardTitle}>{product.title}</p>
-                  <p className={styles.price}>${product.price}</p>
-                  <CardButtons addCartItem={addCartItem} id={product.id} />
-                </div>
-              );
-            })}
+            {products
+              .filter((product) =>
+                activeCategory === ALL_CATEGORY
+                  ? product
+                  : product.category === activeCategory
+                    ? product
+                    : null,
+              )
+              .map((product) => {
+                return (
+                  <div className={styles.card} key={product.id}>
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className={styles.cardImage}
+                    />
+                    <p className={styles.cardTitle}>{product.title}</p>
+                    <p className={styles.price}>${product.price}</p>
+                    <CardButtons addCartItem={addCartItem} id={product.id} />
+                  </div>
+                );
+              })}
           </main>
         </div>
       </div>
