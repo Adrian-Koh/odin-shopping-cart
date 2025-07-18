@@ -4,6 +4,7 @@ import styles from "./Shop.module.css";
 import { shopItems } from "../shop-items";
 import { CardButtons } from "../CardButtons/CardButtons";
 import { Cart } from "../Cart/Cart";
+import { ProductInfo } from "../ProductInfo/ProductInfo";
 
 const ALL_CATEGORY = "all products";
 
@@ -13,6 +14,7 @@ const Shop = () => {
   const [categories, setCategories] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [showShop, setShowShop] = useState(true);
+  const [productInfo, setProductInfo] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -64,6 +66,10 @@ const Shop = () => {
   function handleCategoryClick(category) {
     setActiveCategory(category);
     setShowShop(true);
+  }
+
+  function showInfoCard(product) {
+    setProductInfo(product);
   }
 
   return (
@@ -128,6 +134,7 @@ const Shop = () => {
                         src="../../../public/information.svg"
                         alt="info"
                         className={styles.infoIcon}
+                        onClick={() => showInfoCard(product)}
                       />
                       <CardButtons
                         updateCartItem={addCartItem}
@@ -145,6 +152,10 @@ const Shop = () => {
               updateCartItem={updateItemFromCart}
             />
           )}
+          <ProductInfo
+            product={productInfo}
+            infoClosed={() => setProductInfo(null)}
+          />
         </div>
       </div>
     </>

@@ -1,0 +1,9 @@
+
+.infoCard {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 50vw;
+    background-color: white;
+}
