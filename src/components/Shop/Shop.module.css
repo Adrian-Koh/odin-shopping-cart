@@ -1,4 +1,4 @@
-img {
+.cardImage {
     height: 100px;
     width: auto;
 }
@@ -46,7 +46,7 @@ aside {
     margin: 20px;
 }
 
-.card-title {
+.cardTitle {
     font-weight: 500;
     font-size: 16px;
     text-align: center;
@@ -65,4 +65,22 @@ aside {
     color: rgb(10, 161, 10);
     font-weight: 700;
     font-size: 16px;
+}
+
+nav img {
+    height: 30px;
+}
+
+.shopNavBar {
+    width: fit-content;
+    display: flex;
+    position: absolute;
+    right: 50px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
 }

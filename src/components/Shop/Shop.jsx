@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "../styles/Shop.modules.css";
-import { shopItems } from "./shop-items";
-import { CardButtons } from "./CardButtons";
+import styles from "./Shop.module.css";
+import { shopItems } from "../shop-items";
+import { CardButtons } from "../CardButtons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -52,8 +52,14 @@ const Shop = () => {
 
   return (
     <>
-      <h1>Shop</h1>
-      <div className="container">
+      <div className={styles.title}>
+        <h1>Shop</h1>
+        <nav className={styles.shopNavBar}>
+          <img src="../../public/shopping.svg" alt="shop" />
+          <img src="../../public/cart.svg" alt="cart" />
+        </nav>
+      </div>
+      <div className={styles.container}>
         <aside>
           <h2>Categories</h2>
           <ul>
@@ -69,18 +75,24 @@ const Shop = () => {
             })}
           </ul>
         </aside>
-        <main>
-          {displayProducts.map((product) => {
-            return (
-              <div className="card" key={product.id}>
-                <img src={product.image} alt={product.title} />
-                <p className="card-title">{product.title}</p>
-                <p className="price">${product.price}</p>
-                <CardButtons addCartItem={addCartItem} id={product.id} />
-              </div>
-            );
-          })}
-        </main>
+        <div className={styles.mainContainer}>
+          <main>
+            {displayProducts.map((product) => {
+              return (
+                <div className={styles.card} key={product.id}>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className={styles.cardImage}
+                  />
+                  <p className={styles.cardTitle}>{product.title}</p>
+                  <p className={styles.price}>${product.price}</p>
+                  <CardButtons addCartItem={addCartItem} id={product.id} />
+                </div>
+              );
+            })}
+          </main>
+        </div>
       </div>
     </>
   );
