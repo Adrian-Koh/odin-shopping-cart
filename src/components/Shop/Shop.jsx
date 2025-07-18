@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./Shop.module.css";
 import { shopItems } from "../shop-items";
-import { CardButtons } from "../CardButtons";
+import { CardButtons } from "../CardButtons/CardButtons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -46,7 +46,7 @@ const Shop = () => {
     } else {
       newCartItems = [...cartItems, item];
     }
-
+    console.log(newCartItems);
     setCartItems(newCartItems);
   }
 

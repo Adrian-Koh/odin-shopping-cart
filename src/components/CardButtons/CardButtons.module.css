@@ -9,7 +9,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.buttons-row {
+.buttonsRow {
     display: flex;
     gap: 5px;
     justify-self: flex-end;

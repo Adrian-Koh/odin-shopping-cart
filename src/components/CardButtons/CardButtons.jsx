@@ -1,4 +1,4 @@
-import "../styles/CardButtons.modules.css";
+import styles from "./CardButtons.module.css";
 import { useState } from "react";
 
 const CardButtons = ({ addCartItem, id }) => {
@@ -18,7 +18,7 @@ const CardButtons = ({ addCartItem, id }) => {
   }
 
   return (
-    <div className="buttons-row">
+    <div className={styles.buttonsRow}>
       <button
         disabled={quantity === 0}
         onClick={() => handlePlusMinusClick(-1)}
