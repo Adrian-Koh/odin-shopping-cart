@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./Shop.module.css";
 import { shopItems } from "../shop-items";
 import { CardButtons } from "../CardButtons/CardButtons";
+import { Cart } from "../Cart/Cart";
 
 const ALL_CATEGORY = "all products";
 
@@ -43,8 +44,23 @@ const Shop = () => {
     setCartItems(newCartItems);
   }
 
+  function updateItemFromCart(item) {
+    let newCartItems;
+    if (cartItems.filter((cartItem) => cartItem.id === item.id).length > 0) {
+      newCartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
+    }
+    newCartItems = [...newCartItems, item];
+    console.log(newCartItems);
+    setCartItems(newCartItems);
+  }
+
   function handleNavClick(show) {
     setShowShop(show);
+  }
+
+  function handleCategoryClick(category) {
+    setActiveCategory(category);
+    setShowShop(true);
   }
 
   return (
@@ -72,7 +88,10 @@ const Shop = () => {
           <ul>
             {categories.map((category) => {
               return (
-                <li key={category} onClick={() => setActiveCategory(category)}>
+                <li
+                  key={category}
+                  onClick={() => handleCategoryClick(category)}
+                >
                   {category}
                 </li>
               );
@@ -80,30 +99,42 @@ const Shop = () => {
           </ul>
         </aside>
         <div className={styles.mainContainer}>
-          <main>
-            {products
-              .filter((product) =>
-                activeCategory === ALL_CATEGORY
-                  ? product
-                  : product.category === activeCategory
+          {showShop ? (
+            <main>
+              {products
+                .filter((product) =>
+                  activeCategory === ALL_CATEGORY
                     ? product
-                    : null,
-              )
-              .map((product) => {
-                return (
-                  <div className={styles.card} key={product.id}>
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className={styles.cardImage}
-                    />
-                    <p className={styles.cardTitle}>{product.title}</p>
-                    <p className={styles.price}>${product.price}</p>
-                    <CardButtons addCartItem={addCartItem} id={product.id} />
-                  </div>
-                );
-              })}
-          </main>
+                    : product.category === activeCategory
+                      ? product
+                      : null,
+                )
+                .map((product) => {
+                  return (
+                    <div className={styles.card} key={product.id}>
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className={styles.cardImage}
+                      />
+                      <p className={styles.cardTitle}>{product.title}</p>
+                      <p className={styles.price}>${product.price}</p>
+                      <CardButtons
+                        updateCartItem={addCartItem}
+                        id={product.id}
+                        isInCart={false}
+                      />
+                    </div>
+                  );
+                })}
+            </main>
+          ) : (
+            <Cart
+              products={products}
+              cartItems={cartItems}
+              updateCartItem={updateItemFromCart}
+            />
+          )}
         </div>
       </div>
     </>
