@@ -118,7 +118,9 @@ const Shop = () => {
                         className={styles.cardImage}
                       />
                       <p className={styles.cardTitle}>{product.title}</p>
-                      <p className={styles.price}>${product.price}</p>
+                      <p className={styles.price}>
+                        ${Number(product.price).toFixed(2)}
+                      </p>
                       <CardButtons
                         updateCartItem={addCartItem}
                         id={product.id}

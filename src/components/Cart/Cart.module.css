@@ -5,8 +5,8 @@
 }
 
 .cartItem {
-    border: solid 1px black;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px 5px grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,4 +17,25 @@
 img {
     height: 100px;
     width: auto;
+}
+
+.checkoutBar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.cartItemInfo {
+    margin-right: auto;
+}
+
+.cartItemTitle {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.cartItemQuantity {
+
 }
