@@ -1,9 +1,50 @@
-
 .infoCard {
-    display: block;
-    position: absolute;
-    top: 40%;
-    left: 20%;
-    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    width: 500px;
+    top: 10%;
+    left: calc(50% - 250px);
+    padding: 10px;
     background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 5px grey;
+}
+
+.infoClose {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.infoTitle {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+.infoImage, .infoTitle, .infoPrice {
+    grid-column: 1 / 2;
+}
+
+.infoImage {
+    grid-row: 1/2;
+}
+
+.infoTitle {
+    grid-row: 2/3;
+}
+
+.infoPrice {
+    grid-row: 3/4;
+}
+
+.infoDescription {
+    grid-column: 2/3;
+    grid-row: 1/4;
 }
