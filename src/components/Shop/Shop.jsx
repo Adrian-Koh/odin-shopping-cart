@@ -124,6 +124,11 @@ const Shop = () => {
                       <p className={styles.price}>
                         ${Number(product.price).toFixed(2)}
                       </p>
+                      <img
+                        src="../../../public/information.svg"
+                        alt="info"
+                        className={styles.infoIcon}
+                      />
                       <CardButtons
                         updateCartItem={addCartItem}
                         id={product.id}

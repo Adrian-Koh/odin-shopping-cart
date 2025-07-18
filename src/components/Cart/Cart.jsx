@@ -39,20 +39,26 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
             );
           })}
       </div>
-      <div className={styles.checkoutBar}>
-        <p>
-          Total: $
-          {Number(
-            cartItems.reduce((total, cartItem) => {
-              const itemPrice = products.filter(
-                (product) => product.id === cartItem.id,
-              )[0].price;
-              return total + itemPrice * cartItem.quantity;
-            }, 0),
-          ).toFixed(2)}
+      {cartItems.length === 0 ? (
+        <p className={styles.nothingMessage}>
+          Your cart is empty. Add some items!
         </p>
-        <button className={styles.checkout}>Checkout</button>
-      </div>
+      ) : (
+        <div className={styles.checkoutBar}>
+          <p>
+            Total: $
+            {Number(
+              cartItems.reduce((total, cartItem) => {
+                const itemPrice = products.filter(
+                  (product) => product.id === cartItem.id,
+                )[0].price;
+                return total + itemPrice * cartItem.quantity;
+              }, 0),
+            ).toFixed(2)}
+          </p>
+          <button className={styles.checkout}>Checkout</button>
+        </div>
+      )}
     </div>
   );
 };

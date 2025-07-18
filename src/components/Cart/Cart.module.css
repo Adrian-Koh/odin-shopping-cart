@@ -53,3 +53,7 @@ img {
     width: auto;
     margin-left: 2px;
 }
+
+.nothingMessage {
+    font-size: 24px;
+}
