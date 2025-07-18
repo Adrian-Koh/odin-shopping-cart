@@ -42,6 +42,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 5fr;
     justify-items: center;
+    width: 100vw;
 }
 
 aside {
@@ -77,12 +78,13 @@ nav img {
     width: fit-content;
     display: flex;
     position: absolute;
-    right: 50px;
+    right: 20px;
     top: 20px;
 }
 
 .title {
     display: flex;
+    width: calc(100vw - 50px);
     justify-content: center;
     position: relative;
     margin-bottom: 20px;
