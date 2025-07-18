@@ -9,6 +9,7 @@ const Shop = () => {
   const [displayProducts, setDisplayProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [showShop, setShowShop] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -50,13 +51,27 @@ const Shop = () => {
     setCartItems(newCartItems);
   }
 
+  function handleNavClick(show) {
+    setShowShop(show);
+  }
+
   return (
     <>
       <div className={styles.title}>
         <h1>Shop</h1>
         <nav className={styles.shopNavBar}>
-          <img src="../../public/shopping.svg" alt="shop" />
-          <img src="../../public/cart.svg" alt="cart" />
+          <img
+            src="../../public/shopping.svg"
+            alt="shop"
+            onClick={() => handleNavClick(true)}
+            className={!showShop ? styles.showIcon : styles.hideIcon}
+          />
+          <img
+            src="../../public/cart.svg"
+            alt="cart"
+            onClick={() => handleNavClick(false)}
+            className={showShop ? styles.showIcon : styles.hideIcon}
+          />
         </nav>
       </div>
       <div className={styles.container}>

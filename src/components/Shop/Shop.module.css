@@ -85,3 +85,11 @@ nav img {
     position: relative;
     margin-bottom: 20px;
 }
+
+.showIcon {
+    display: block;
+}
+
+.hideIcon {
+    display: none;
+}
