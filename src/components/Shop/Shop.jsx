@@ -48,9 +48,12 @@ const Shop = () => {
     let newCartItems;
     if (cartItems.filter((cartItem) => cartItem.id === item.id).length > 0) {
       newCartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
+      if (item.quantity === 0) {
+        setCartItems(newCartItems);
+        return;
+      }
     }
     newCartItems = [...newCartItems, item];
-    console.log(newCartItems);
     setCartItems(newCartItems);
   }
 

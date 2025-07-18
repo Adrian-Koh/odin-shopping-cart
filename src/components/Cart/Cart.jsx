@@ -29,13 +29,19 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
                   totalQuantity={cartItem.quantity}
                   isInCart={true}
                 ></CardButtons>
+                <img
+                  src="../../../public/trash-can.svg"
+                  alt="delete"
+                  className={styles.delete}
+                  onClick={() => updateCartItem({ ...cartItem, quantity: 0 })}
+                />
               </div>
             );
           })}
       </div>
       <div className={styles.checkoutBar}>
         <p>
-          Price: $
+          Total: $
           {Number(
             cartItems.reduce((total, cartItem) => {
               const itemPrice = products.filter(
@@ -45,7 +51,7 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
             }, 0),
           ).toFixed(2)}
         </p>
-        <button>Checkout</button>
+        <button className={styles.checkout}>Checkout</button>
       </div>
     </div>
   );
