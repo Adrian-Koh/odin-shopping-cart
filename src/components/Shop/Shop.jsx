@@ -91,73 +91,77 @@ const Shop = () => {
           />
         </nav>
       </div>
-      <div className={styles.container}>
-        <aside>
-          <h2>Categories</h2>
-          <ul>
-            {categories.map((category) => {
-              return (
-                <li
-                  key={category}
-                  onClick={() => handleCategoryClick(category)}
-                >
-                  {category}
-                </li>
-              );
-            })}
-          </ul>
-        </aside>
-        <div className={styles.mainContainer}>
-          {showShop ? (
-            <main>
-              {products
-                .filter((product) =>
-                  activeCategory === ALL_CATEGORY
-                    ? product
-                    : product.category === activeCategory
+      {products.length === 0 ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className={styles.container}>
+          <aside>
+            <h2>Categories</h2>
+            <ul>
+              {categories.map((category) => {
+                return (
+                  <li
+                    key={category}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
+          <div className={styles.mainContainer}>
+            {showShop ? (
+              <main>
+                {products
+                  .filter((product) =>
+                    activeCategory === ALL_CATEGORY
                       ? product
-                      : null,
-                )
-                .map((product) => {
-                  return (
-                    <div className={styles.card} key={product.id}>
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className={styles.cardImage}
-                      />
-                      <p className={styles.cardTitle}>{product.title}</p>
-                      <p className={styles.price}>
-                        ${Number(product.price).toFixed(2)}
-                      </p>
-                      <img
-                        src="../../../public/information.svg"
-                        alt="info"
-                        className={styles.infoIcon}
-                        onClick={() => showInfoCard(product)}
-                      />
-                      <CardButtons
-                        updateCartItem={addCartItem}
-                        id={product.id}
-                        isInCart={false}
-                      />
-                    </div>
-                  );
-                })}
-            </main>
-          ) : (
-            <Cart
-              products={products}
-              cartItems={cartItems}
-              updateCartItem={updateItemFromCart}
+                      : product.category === activeCategory
+                        ? product
+                        : null,
+                  )
+                  .map((product) => {
+                    return (
+                      <div className={styles.card} key={product.id}>
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className={styles.cardImage}
+                        />
+                        <p className={styles.cardTitle}>{product.title}</p>
+                        <p className={styles.price}>
+                          ${Number(product.price).toFixed(2)}
+                        </p>
+                        <img
+                          src="../../../public/information.svg"
+                          alt="info"
+                          className={styles.infoIcon}
+                          onClick={() => showInfoCard(product)}
+                        />
+                        <CardButtons
+                          updateCartItem={addCartItem}
+                          id={product.id}
+                          isInCart={false}
+                        />
+                      </div>
+                    );
+                  })}
+              </main>
+            ) : (
+              <Cart
+                products={products}
+                cartItems={cartItems}
+                updateCartItem={updateItemFromCart}
+              />
+            )}
+            <ProductInfo
+              product={productInfo}
+              infoClosed={() => setProductInfo(null)}
             />
-          )}
-          <ProductInfo
-            product={productInfo}
-            infoClosed={() => setProductInfo(null)}
-          />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
