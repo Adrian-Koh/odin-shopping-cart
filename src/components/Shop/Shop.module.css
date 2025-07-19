@@ -6,7 +6,7 @@
 main {
     display: grid;
     grid-template-columns: repeat(4, 250px);
-    grid-auto-rows: 250px;
+    grid-auto-rows: fit-content(250px);
     justify-content: center;
     gap: 20px;
 }
@@ -18,7 +18,7 @@ main {
     justify-content: space-between;
 
     border-radius: 5px;
-    box-shadow: 2px 2px 3px 3px rgb(107, 107, 107);
+    box-shadow: var(--shadow);
     padding: 5px;
     position: relative;
     background-color: white;
@@ -36,6 +36,14 @@ li {
     list-style-type: none;
     margin-bottom: 20px;
     font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+li:hover {
+    background-color: var(--light-purple);
+    color: white;
+    box-shadow: 0 0 3px 3px var(--light-purple);
 }
 
 ul {
@@ -80,10 +88,13 @@ aside {
 
 nav img {
     height: 30px;
+    width: auto;
+    border-radius: 25%;
+    padding: 5px;
 }
 
 .shopNavBar {
-    width: fit-content;
+    width: min-content;
     display: flex;
     position: absolute;
     right: 20px;
@@ -110,8 +121,13 @@ nav img {
     height: 25px;
     width: auto;
     position: absolute;
-    top: 100px;
+    top: 50px;
     right: 8px;
+    border-radius: 50%;
     margin: 3px;
     filter: invert(39%) sepia(100%) saturate(2618%) hue-rotate(197deg) brightness(98%) contrast(95%);
+}
+
+.infoIcon:hover, .showIcon:hover {
+    box-shadow: var(--shadow);
 }

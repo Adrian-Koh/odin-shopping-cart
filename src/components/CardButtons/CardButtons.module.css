@@ -21,11 +21,18 @@ input {
 }
 
 button:disabled {
-    border: solid 1px rgb(202, 202, 202);
+    background-color: rgb(202, 202, 202);
 }
 
-button {
-    background-color: white;
-    border: solid 1px black;
+button:hover {
+    box-shadow: var(--shadow);
+}
+
+input, button {
+    background-color: var(--light-purple);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
     border-radius: 3px;
 }

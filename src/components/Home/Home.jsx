@@ -6,7 +6,7 @@ const Home = () => {
     <div className={styles.largeContainer}>
       <div className={styles.container}>
         <h1>The Everything Shop</h1>
-        <p>
+        <p className={styles.welcome}>
           Welcome to The Everything Shop! Here, you will find anything you can
           think of. From clothes to electronics, we've got you covered. Browse
           through our catalog and you'll find that you'll never need to visit

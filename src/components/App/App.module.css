@@ -1,5 +1,8 @@
 :root {
-    --link: rgb(60, 60, 194);
+    --link: rgb(119, 8, 110);
+    --light-purple: rgb(186, 148, 197);
+    --shadow: 2px 2px 3px 3px grey;
+    font-family: "Delius Swash Caps", serif;
 }
 
 html {
@@ -29,6 +32,12 @@ html {
 a {
     color: var(--link);
     text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+a:hover {
+    box-shadow: var(--shadow);
 }
 
 a:visited {
@@ -36,6 +45,11 @@ a:visited {
 }
 
 footer {
-    font-size: 12px;
-    text-align: right;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    width: max-content;
+    margin-left: auto;
 }

@@ -20,7 +20,11 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
                     Quantity: {cartItem.quantity}
                   </p>
                   <p className={styles.cartItemPrice}>
-                    ${Number(product.price * cartItem.quantity).toFixed(2)}
+                    Unit price: ${Number(product.price).toFixed(2)}
+                  </p>
+                  <p className={styles.cartItemTotalPrice}>
+                    Total price: $
+                    {Number(product.price * cartItem.quantity).toFixed(2)}
                   </p>
                 </div>
                 <div className={styles.buttons}>
@@ -47,7 +51,7 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
         </p>
       ) : (
         <div className={styles.checkoutBar}>
-          <p>
+          <p className={styles.totalPrice}>
             Total: $
             {Number(
               cartItems.reduce((total, cartItem) => {
