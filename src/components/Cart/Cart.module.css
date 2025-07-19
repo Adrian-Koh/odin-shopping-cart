@@ -7,15 +7,15 @@
 .cartItem {
     border-radius: 5px;
     box-shadow: 2px 2px 5px 5px grey;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: fit-content(100px) 250px fit-content(100px);
     align-items: center;
     padding: 10px;
 }
 
 img {
-    height: 100px;
-    width: auto;
+    width: 100px;
+    height: auto;
 }
 
 .checkoutBar {
@@ -28,6 +28,7 @@ img {
 
 .cartItemInfo {
     margin: 0 10px;
+    justify-self: flex-start;
 }
 
 .cartItemTitle {
@@ -56,4 +57,9 @@ img {
 
 .nothingMessage {
     font-size: 24px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }
