@@ -1,0 +1,44 @@
+.container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.largeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.introContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.intro {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin: 0;
+    align-self: center;
+}
+
+.introImage {
+    width: 200px;
+    height: auto;
+}
+
+.imgCredits {
+    font-size: 10px;
+}
+
+.imgCredits a {
+    font-size: inherit;
+    margin: 0;
+}
+
+hr {
+    border: solid 1px black;
+    width: 100%;
+    margin-top: 20px;
+}
