@@ -1,5 +1,5 @@
 import styles from "./CardButtons.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CardButtons = ({
   updateCartItem,
@@ -26,6 +26,10 @@ const CardButtons = ({
 
     updateCartItem({ id, quantity });
   }
+
+  useEffect(() => {
+    setQuantity(totalQuantity);
+  }, [totalQuantity]);
 
   return (
     <div className={styles.buttonsRow}>
