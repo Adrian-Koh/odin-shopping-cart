@@ -1,0 +1,16 @@
+
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.largeContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
