@@ -30,6 +30,7 @@
 
 .imgCredits {
     font-size: 10px;
+    padding: 2px;
 }
 
 .imgCredits a {
@@ -41,4 +42,10 @@ hr {
     border: solid 1px black;
     width: 100%;
     margin-top: 20px;
+}
+
+.container h1, .container p {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
 }

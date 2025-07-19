@@ -2,6 +2,14 @@
     --link: rgb(60, 60, 194);
 }
 
+html {
+    background-image: url(../../../public/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
 .navBar {
     --spacing: 15px;
     width: calc(100vw - (6 * var(--spacing)));
@@ -12,14 +20,22 @@
     margin: var(--spacing);
 }
 
-a {
-    text-decoration: none;
+.navBarLink {
     margin: 10px;
-    color: var(--link);
     margin: 5px 20px;
     font-size: 20px;
 }
 
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
 a:visited {
     color: var(--link);
+}
+
+footer {
+    font-size: 12px;
+    text-align: right;
 }
