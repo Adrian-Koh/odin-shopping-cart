@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home component > renders home 1`] = `
+<div>
+  <div
+    class="_largeContainer_d6eec2"
+  >
+    <div
+      class="_container_d6eec2"
+    >
+      <h1>
+        The Everything Shop
+      </h1>
+      <p
+        class="_welcome_d6eec2"
+      >
+        Welcome to The Everything Shop! Here, you will find anything you can think of. From clothes to electronics, we've got you covered. Browse through our catalog and you'll find that you'll never need to visit another store again. We provide free shipping to all countries for a minimum order of $100. Happy browsing!
+      </p>
+      <hr />
+      <div
+        class="_introContainer_d6eec2"
+      >
+        <img
+          alt="Kier Eagan"
+          class="_introImage_d6eec2"
+          src="../../../public/old-man-portrait.jpg"
+        />
+        <p
+          class="_imgCredits_d6eec2"
+        >
+          Photo by
+           
+          <a
+            href="https://unsplash.com/@birminghammuseumstrust?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >
+            Birmingham Museums Trust
+          </a>
+           
+          on
+           
+          <a
+            href="https://unsplash.com/photos/man-in-black-suit-painting-G70apFxSF_g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >
+            Unsplash
+          </a>
+        </p>
+        <p
+          class="_intro_d6eec2"
+        >
+          The Everything Shop was founded in Kingston, NY in 1865 by Kier Eagan. Driven by the desire to provide a one-stop-shop for the community's everyday needs, Kier worked with local suppliers to put as many essentials as he could on the shelves. As his vision grew to provide access to essential goods to everywhere in the world, The Everything Shop has expanded to other locations which includes Chicago, IL, Houston, TX and San Francisco, CA, among other locations. With the internet, we are proud to say that you can purchase our products from anywhere in the world. Thank you for stopping by!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
