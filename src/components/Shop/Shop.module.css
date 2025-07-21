@@ -9,6 +9,7 @@ main {
     grid-auto-rows: fit-content(250px);
     justify-content: center;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 .card {

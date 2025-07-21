@@ -75,7 +75,7 @@ const Shop = () => {
   return (
     <>
       <div className={styles.title}>
-        <h1>Shop</h1>
+        <h1>The Everything Shop</h1>
         <nav className={styles.shopNavBar}>
           <img
             src="../../public/shopping.svg"
