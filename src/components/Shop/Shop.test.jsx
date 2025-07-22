@@ -60,5 +60,19 @@ describe("Shop component", () => {
     expect(document.querySelector("main").children.length).toBe(
       mockItems.filter((item) => item.category === "Category 2").length,
     );
+    vi.restoreAllMocks();
+  });
+
+  it("display item description on info click", async () => {
+    vi.spyOn(shopItems, "shopItems").mockResolvedValue([mockItems[0]]);
+    render(<Shop />);
+
+    await screen.findByText("Item A");
+
+    const infoButtonA = screen.getByAltText("info");
+    fireEvent.click(infoButtonA);
+
+    expect(screen.getByText("item description of A")).toBeInTheDocument();
+    vi.restoreAllMocks();
   });
 });
