@@ -76,13 +76,13 @@ const Shop = () => {
         <h1>The Everything Shop</h1>
         <nav className={styles.shopNavBar}>
           <img
-            src="../../../public/shopping.svg"
+            src="/shopping.svg"
             alt="shop"
             onClick={() => handleNavClick(true)}
             className={!showShop ? styles.showIcon : styles.hideIcon}
           />
           <img
-            src="../../../public/cart.svg"
+            src="/cart.svg"
             alt="cart"
             onClick={() => handleNavClick(false)}
             className={showShop ? styles.showIcon : styles.hideIcon}
@@ -132,7 +132,7 @@ const Shop = () => {
                           ${Number(product.price).toFixed(2)}
                         </p>
                         <img
-                          src="../../../public/information.svg"
+                          src="/information.svg"
                           alt="info"
                           className={styles.infoIcon}
                           onClick={() => showInfoCard(product)}
