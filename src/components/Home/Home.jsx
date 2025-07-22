@@ -16,7 +16,7 @@ const Home = () => {
         <hr />
         <div className={styles.introContainer}>
           <img
-            src="../../../public/old-man-portrait.jpg"
+            src="/old-man-portrait.jpg"
             alt="Kier Eagan"
             className={styles.introImage}
           />
