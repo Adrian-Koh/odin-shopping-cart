@@ -19,7 +19,6 @@ const Shop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const result = await shopItems();
-      console.log(result);
 
       setProducts(result);
 
@@ -42,7 +41,6 @@ const Shop = () => {
     } else {
       newCartItems = [...cartItems, item];
     }
-    console.log(newCartItems);
     setCartItems(newCartItems);
   }
 

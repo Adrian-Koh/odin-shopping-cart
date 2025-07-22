@@ -1,4 +1,5 @@
 import styles from "./ProductInfo.module.css";
+import PropTypes from "prop-types";
 
 const ProductInfo = ({ product, infoClosed }) => {
   function handleInfoClose() {
@@ -19,6 +20,11 @@ const ProductInfo = ({ product, infoClosed }) => {
       </button>
     </div>
   ) : null;
+};
+
+ProductInfo.propTypes = {
+  product: PropTypes.object,
+  infoClosed: PropTypes.func,
 };
 
 export { ProductInfo };

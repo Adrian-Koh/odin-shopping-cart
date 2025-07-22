@@ -1,5 +1,6 @@
 import styles from "./CardButtons.module.css";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const CardButtons = ({
   updateCartItem,
@@ -50,6 +51,13 @@ const CardButtons = ({
       </button>
     </div>
   );
+};
+
+CardButtons.propTypes = {
+  updateCartItem: PropTypes.func,
+  id: PropTypes.number,
+  totalQuantity: PropTypes.number,
+  isInCart: PropTypes.bool,
 };
 
 export { CardButtons };

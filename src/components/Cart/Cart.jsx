@@ -1,5 +1,6 @@
 import styles from "./Cart.module.css";
 import { CardButtons } from "../CardButtons/CardButtons";
+import PropTypes from "prop-types";
 
 const Cart = ({ products, cartItems, updateCartItem }) => {
   return (
@@ -12,7 +13,7 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
               (product) => product.id === cartItem.id,
             )[0];
             return (
-              <div className={styles.cartItem}>
+              <div className={styles.cartItem} key={product.id}>
                 <img src={product.image} alt={product.title} />
                 <div className={styles.cartItemInfo}>
                   <p className={styles.cartItemTitle}>{product.title}</p>
@@ -67,6 +68,12 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
       )}
     </div>
   );
+};
+
+Cart.propTypes = {
+  products: PropTypes.array,
+  cartItems: PropTypes.array,
+  updateCartItem: PropTypes.func,
 };
 
 export { Cart };
