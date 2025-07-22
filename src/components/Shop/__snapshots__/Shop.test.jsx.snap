@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shop component > renders shop 1`] = `
+<div>
+  <div
+    class="_title_6b6c4b"
+  >
+    <h1>
+      The Everything Shop
+    </h1>
+    <nav
+      class="_shopNavBar_6b6c4b"
+    >
+      <img
+        alt="shop"
+        class="_hideIcon_6b6c4b"
+        src="../../public/shopping.svg"
+      />
+      <img
+        alt="cart"
+        class="_showIcon_6b6c4b"
+        src="../../public/cart.svg"
+      />
+    </nav>
+  </div>
+  <h1>
+    Loading...
+  </h1>
+</div>
+`;
