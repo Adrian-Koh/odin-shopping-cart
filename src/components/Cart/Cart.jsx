@@ -36,7 +36,7 @@ const Cart = ({ products, cartItems, updateCartItem }) => {
                     isInCart={true}
                   ></CardButtons>
                   <img
-                    src="../../../public/trash-can.svg"
+                    src="/trash-can.svg"
                     alt="delete"
                     className={styles.delete}
                     onClick={() => updateCartItem({ ...cartItem, quantity: 0 })}

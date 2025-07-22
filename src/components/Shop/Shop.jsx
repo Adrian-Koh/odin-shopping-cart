@@ -76,13 +76,13 @@ const Shop = () => {
         <h1>The Everything Shop</h1>
         <nav className={styles.shopNavBar}>
           <img
-            src="../../public/shopping.svg"
+            src="../../../public/shopping.svg"
             alt="shop"
             onClick={() => handleNavClick(true)}
             className={!showShop ? styles.showIcon : styles.hideIcon}
           />
           <img
-            src="../../public/cart.svg"
+            src="../../../public/cart.svg"
             alt="cart"
             onClick={() => handleNavClick(false)}
             className={showShop ? styles.showIcon : styles.hideIcon}
